@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lumina - Text Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="mode-toggle">
+        <label class="switch">
+            <input type="checkbox" id="modeToggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <div class="container">
+        <h1 class="title">Lumina</h1>
+        <p class="motto">Shedding light behind every message</p>
+
+        <form method="POST">
+            <textarea name="comment" placeholder="Enter your tweet or comment...">{{ input_text or '' }}</textarea>
+
+            <div class="button-group">
+                <input type="radio" id="sarcasm" name="task" value="sarcasm" {% if selected_task == 'sarcasm' %}checked{% endif %}>
+                <label for="sarcasm" class="task-btn">Sarcasm</label>
+
+                <input type="radio" id="cyber" name="task" value="cyber" {% if selected_task == 'cyber' %}checked{% endif %}>
+                <label for="cyber" class="task-btn">Cyberbullying</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Classify</button>
+        </form>
+
+        {% if error %}
+            <div class="message error">{{ error }}</div>
+        {% endif %}
+
+        {% if prediction %}
+            <div class="message result">
+                <h2>Result:</h2>
+                <p>{{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        const toggle = document.getElementById('modeToggle');
+        const body = document.body;
+
+        // Load theme from local storage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark');
+            toggle.checked = true;
+        }
+
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>
