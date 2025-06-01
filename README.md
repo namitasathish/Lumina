@@ -15,11 +15,11 @@ Lumina is a web based text classification tool that detects **sarcasm** and **cy
   
 
 ## Sarcasm Detection Model
-Type: Binary Classification
+- **Type:** Binary Classification
 
-Output: Sarcastic or Not Sarcastic
+- **Output:** Sarcastic or Not Sarcastic
 
-Dataset: Trained on Reddit comments from a labeled sarcasm dataset 
+- **Dataset:** Trained on Reddit comments from a labeled sarcasm dataset 
 
 Working:
 
@@ -30,11 +30,11 @@ A Logistic Regression model is trained on this vectorized data.
 At runtime, the model predicts whether a given message carries a sarcastic tone.
 
 ## Cyberbullying Detection Model
-Type: Binary or Multi-Class Classification
+- **Type:** Binary or Multi-Class Classification
 
-Output: Cyberbullying Intent (e.g., Insult, Threat, Harassment, etc.) or simply Yes/No
+- **Output:** Cyberbullying Intent (e.g., Insult, Threat, Harassment, etc.) or simply Yes/No
 
-Dataset: Based on a labeled dataset of tweets and messages with categories of cyberbullying (e.g., Cyberbullying Tweets Dataset)
+- **Dataset:** Based on a labeled dataset of tweets and messages with categories of cyberbullying (e.g., Cyberbullying Tweets Dataset)
 
 Working:
 
