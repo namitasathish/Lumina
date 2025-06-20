@@ -45,4 +45,4 @@ Working:
 - On prediction, the model returns the intent or presence of cyberbullying based on learned patterns from toxic language.
 
 ## Peek into the webapp 
-<img src="lumina.png" width="650" height="500">
+<img src="lumina.png" width="650" height="550">
